@@ -3933,6 +3933,11 @@ body.active-animate .container-page .toc .page-operation {
   top:4px
 }
 #header .container-header .container-breadcrumb-nav {
+  // 自定义调整
+  //float: right;
+  position: fixed;
+  right: 100px;
+
   padding-bottom:8px
 }
 #header .container-header .container-breadcrumb-nav .breadcrumb-nav-bar {
