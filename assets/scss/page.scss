@@ -1,0 +1,172 @@
+/*=============================================
+=            Variables                        =
+=============================================*/
+
+// Fonts
+$font-stack: 'jostFont', 'kaiti', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+// Colors
+$bg-color: #ffffff;
+$title-color: #2c3e50;
+$slogan-color: #7f8c8d;
+$button-bg: rgba(239, 239, 239, 0.5);
+$button-hover-bg: rgba(239, 239, 239, 0.8);
+$button-text-color: #5d2f86;
+$button-hover-color: #e69;
+$footer-text-color: #b0b0b0;
+$footer-hover-color: #777;
+$footer-border-color: #eeeeee;
+
+
+/*=============================================
+=            Mixins                           =
+=============================================*/
+
+@mixin user-select($value) {
+  user-select: $value;
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+}
+
+
+/*=============================================
+=            Base & Keyframes                 =
+=============================================*/
+
+body, h1, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'jostFont';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v14/92zUdgNDAwE0hVIn7L4.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'kaiti';
+  src: local("STKaiti"), local("KaiTi"), local("楷体"), local("楷体_GB2312");
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*=============================================
+=            Layout & Styles                  =
+=============================================*/
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: $font-stack;
+  background-color: $bg-color;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 4px;
+  background-image: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d);
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content-group {
+  text-align: center;
+  animation: fadeIn 1.2s ease-out;
+  @include user-select(none);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: $title-color;
+  margin-bottom: 8px;
+}
+
+.slogan {
+  font-size: 1.1rem;
+  color: $slogan-color;
+  margin-bottom: 40px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid $bg-color;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  a {
+    display: block;
+    width: 96px;
+    padding: 12px 8px;
+    background: $button-bg;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: $button-text-color;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: $button-hover-color;
+      text-shadow: 0 0 1px $button-hover-color;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      background: $button-hover-bg;
+    }
+  }
+}
+
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid $footer-border-color;
+  background-color: $bg-color;
+
+  a {
+    font-size: 0.85rem;
+    color: $footer-text-color;
+
+    &:hover {
+      color: $footer-hover-color;
+    }
+  }
+}

@@ -1,7 +1,16 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+<div class="content-group">
+    <h1 class="title">行知路</h1>
+    <p class="slogan">虽千万里，吾往矣</p>
+
+    <img class="profile-image"
+         src="imgs/einscat.png"
+         alt="einscat"
+         draggable="false">
+
+    <div class="menu">
+        <a href="https://einscat.com/nav">🎯 导航</a>
+        <a href="https://notes.einscat.com/">📜 笔记</a>
+    </div>
+</div>
 {{ end }}
