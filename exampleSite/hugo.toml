@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-US'
-title = '行知路'
+title = 'My New Hugo Site'
 
 # 启用主题
 theme = 'hugo-theme-ei'
