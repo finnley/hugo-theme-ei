@@ -1,0 +1,9 @@
+{{ $menuData := . }}
+<h2 class="panel-title">{{ $menuData.title }}</h2>
+<nav>
+  <ul>
+    {{ range $menuData.items }}
+    <li><a href="{{ .url }}"><span class="icon">{{ .icon }}</span><span class="text">{{ .name }}</span></a></li>
+    {{ end }}
+  </ul>
+</nav>

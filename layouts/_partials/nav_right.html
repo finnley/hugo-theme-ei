@@ -1,0 +1,21 @@
+<section id="{{ .id }}" class="content-section">
+    <h2>{{ .title }}</h2>
+
+    {{ range .groups }}
+    {{ if .group_title }}
+    <h3>{{ .group_title }}</h3>
+    {{ end }}
+
+    <ul>
+        {{ range .links }}
+        <li><a href="{{ .url }}">
+            <div class="logo-container"><span class="logo-letter">{{ .logo_letter }}</span></div>
+            <div class="text-container">
+                <span class="link-title">{{ .title }}</span>
+                <span class="link-url">{{ .url }}</span>
+            </div>
+        </a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</section>
