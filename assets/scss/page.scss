@@ -1,47 +1,19 @@
-/*=============================================
-=            Variables                        =
-=============================================*/
-
-// Fonts
-$font-stack: 'jostFont', 'kaiti', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
-// Colors
-$bg-color: #ffffff;
-$title-color: #2c3e50;
-$slogan-color: #7f8c8d;
-$button-bg: rgba(239, 239, 239, 0.5);
-$button-hover-bg: rgba(239, 239, 239, 0.8);
-$button-text-color: #5d2f86;
-$button-hover-color: #e69;
-$footer-text-color: #b0b0b0;
-$footer-hover-color: #777;
-$footer-border-color: #eeeeee;
-
-
-/*=============================================
-=            Mixins                           =
-=============================================*/
-
-@mixin user-select($value) {
-  user-select: $value;
-  -webkit-user-select: $value;
-  -moz-user-select: $value;
-  -ms-user-select: $value;
+/* --- Global Settings & Resets --- */
+html {
+  height: 100%;
 }
 
-
-/*=============================================
-=            Base & Keyframes                 =
-=============================================*/
-
-body, h1, p {
+body {
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-a {
-  text-decoration: none;
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
+/* --- General Font Definitions --- */
 @font-face {
   font-family: 'jostFont';
   font-style: normal;
@@ -49,124 +21,331 @@ a {
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/jost/v14/92zUdgNDAwE0hVIn7L4.woff2) format("woff2");
 }
-
 @font-face {
   font-family: 'kaiti';
   src: local("STKaiti"), local("KaiTi"), local("楷体"), local("楷体_GB2312");
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-
-/*=============================================
-=            Layout & Styles                  =
-=============================================*/
-
-html, body {
-  height: 100vh;
-  margin: 0;
+/* --- Scoped Styles for index.html --- */
+/* Selects the body if it contains a .content-group element */
+body:has(.content-group) {
   overflow: hidden;
-  font-family: $font-stack;
-  background-color: $bg-color;
-}
-
-body {
+  font-family: 'jostFont', 'kaiti', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-}
-
-header {
-  height: 4px;
-  background-image: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d);
-  flex-shrink: 0;
-}
-
-main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.content-group {
-  text-align: center;
-  animation: fadeIn 1.2s ease-out;
-  @include user-select(none);
-}
-
-.title {
-  font-size: 3.5rem;
-  font-weight: 500;
-  color: $title-color;
-  margin-bottom: 8px;
-}
-
-.slogan {
-  font-size: 1.1rem;
-  color: $slogan-color;
-  margin-bottom: 40px;
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid $bg-color;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 
   a {
-    display: block;
-    width: 96px;
-    padding: 12px 8px;
-    background: $button-bg;
-    border-radius: 6px;
-    font-size: 1rem;
-    color: $button-text-color;
-    transition: all 0.3s ease-out;
+    text-decoration: none;
+  }
 
-    &:hover {
-      color: $button-hover-color;
-      text-shadow: 0 0 1px $button-hover-color;
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-      background: $button-hover-bg;
+  header {
+    height: 4px;
+    background-image: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d);
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .content-group {
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+    user-select: none;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+
+  .slogan {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    a {
+      display: block;
+      width: 96px;
+      padding: 12px 8px;
+      background: rgba(239, 239, 239, 0.5);
+      border-radius: 6px;
+      font-size: 1rem;
+      color: #5d2f86;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        color: #e69;
+        text-shadow: 0 0 1px #e69;
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        background: rgba(239, 239, 239, 0.8);
+      }
+    }
+  }
+
+  footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eeeeee;
+    background-color: #fff;
+
+    a {
+      font-size: 0.85rem;
+      color: #b0b0b0;
+
+      &:hover {
+        color: #777;
+      }
     }
   }
 }
 
-footer {
-  flex-shrink: 0;
-  text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid $footer-border-color;
-  background-color: $bg-color;
 
-  a {
-    font-size: 0.85rem;
-    color: $footer-text-color;
+/* --- Scoped Styles for nav.html --- */
+/* Selects the body if it contains a .fullscreen-container element */
+body:has(.fullscreen-container) {
+  // SCSS Variables
+  $primary-color: #007bff;
+  $border-color: #e9ecef;
+  $background-color: #f8f9fa;
+  $card-background-color: #ffffff;
+  $text-primary-color: #212529;
+  $text-secondary-color: #6c757d;
 
-    &:hover {
-      color: $footer-hover-color;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+
+  .fullscreen-container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    min-height: 0;
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d) 1;
+  }
+
+  .left-panel {
+    flex: 0 0 260px;
+    background-color: $card-background-color;
+    padding: 30px 20px;
+    overflow-y: auto;
+    border-right: 1px solid $border-color;
+
+    .panel-title {
+      font-size: 1.6em;
+      font-weight: 600;
+      color: $text-primary-color;
+      margin: 0 0 25px 0;
+      padding-bottom: 15px;
+      border-bottom: 2px solid $primary-color;
+      text-align: center;
+    }
+
+    nav {
+      ul { list-style: none; padding: 0; margin: 0; }
+      li { margin: 8px 0; }
+      a {
+        text-decoration: none;
+        color: #495057;
+        display: block;
+        padding: 12px 18px;
+        border-radius: 6px;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: background-color 0.3s, color 0.3s;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        .icon {
+          margin-right: 12px;
+          font-size: 1.2em;
+        }
+        &:hover {
+          background-color: $primary-color;
+          color: #ffffff;
+          .text { transform: translateX(150%); opacity: 0; }
+          .icon { transform: translateX(75px); }
+        }
+      }
+    }
+  }
+
+  .right-panel {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+  }
+
+  .content-section {
+    margin-bottom: 50px;
+
+    h2 {
+      font-family: 'jostFont', 'kaiti', sans-serif;
+      font-size: 2em;
+      font-weight: 500;
+      color: #2c3e50;
+      margin-top: 0;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $border-color;
+      scroll-margin-top: 40px;
+      & + h3 { margin-top: 0; }
+    }
+
+    h3 {
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #495057;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-left: 15px;
+      border-left: 3px solid $primary-color;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 25px;
+      list-style: none;
+      padding: 0;
+    }
+
+    li a {
+      display: flex;
+      align-items: center;
+      background-color: $card-background-color;
+      padding: 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      border: 1px solid $border-color;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s;
+      text-align: left;
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  .logo-container {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $background-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+  }
+
+  .logo-letter {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: $primary-color;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .link-title {
+    font-family: 'jostFont', 'kaiti', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: #7f8c8d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .link-url {
+    font-size: 0.8em;
+    color: $text-secondary-color;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bookmark-section {
+    ul { display: block; }
+    li {
+      background: $card-background-color;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      border: 1px solid $border-color;
+      a {
+        display: inline;
+        padding: 0;
+        background: none;
+        border: none;
+        color: $primary-color;
+        font-weight: 500;
+        text-decoration: underline;
+        &:hover { transform: none; box-shadow: none; }
+      }
+    }
+  }
+
+  footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eeeeee;
+    background-color: #fff;
+
+    a {
+      font-size: 0.85rem;
+      color: #b0b0b0;
+      text-decoration: none;
+
+      &:hover {
+        color: #777;
+      }
     }
   }
 }
