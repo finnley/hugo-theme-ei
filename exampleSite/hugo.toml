@@ -1,5 +1,46 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-US'
-title = 'My New Hugo Site'
+title = '行知路'
 
+# 启用主题
 theme = 'hugo-theme-ei'
+
+hasCJKLanguage = true
+summaryLength = 80
+
+[params]
+author = '夜喵观复'
+slogan = '虽千万里，吾往矣' # 'Life is just a joker.' 'Life should be interesting.'
+
+# 页面语言，默认中文
+en = false
+# 英文首页标题，默认 'EI'
+homeTitleEn = '活死人'
+# 中文首页标题，默认 ‘一晌贪欢’
+homeTitleZh = 'Walking Dead'
+
+# 如下导航链接，你应该创建对应的 `.md` 文件，以生成对应的页面
+# -----------------------------------
+# Nav - nav.md or nav/index.md
+# Search - search.md or search/index.md
+# Archive - archive.md or archive/index.md
+# Wiki - posts/wiki.md or wiki/index.md
+# About - about.md or about/index.md
+# -----------------------------------
+# 菜单选项定制，使用 `00、01、23` 等进行选项顺序调整
+# 🐶🎉👀💡👓🐌
+[params.menu]
+[params.menu.00]
+active = true
+path = '/nav'
+en = 'Nav'
+zh = '导航'
+icon = '🎯'
+
+[params.menu.22]
+active = true
+path = 'https://notes.einscat.com'
+en = 'Notes'
+zh = '笔记'
+icon = '📜'
+
