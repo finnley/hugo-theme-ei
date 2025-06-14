@@ -87,9 +87,12 @@ right_sections:
         - title: "Mermaid Live Editor"
           url: "https://mermaid.live/"
           logo_letter: "M"
+        - title: "Mermaid Live Editor"
+          url: "https://sms-activate.org/cn"
+          logo_letter: "S"
 
 - id: "ai"
-  title: "🤖 大模型 & AI"
+  title: "🤖 AI LLM"
   groups: # AI 模块包含多个子标题，每个 group 有一个 group_title
     - group_title: "AI 综合平台"
       links:
@@ -115,8 +118,8 @@ right_sections:
           logo_letter: "C"
     - group_title: "AI 绘画与设计"
       links:
-        - title: "MJ中文站"
-          url: "https://www.midjourny.cn/home/#/mj"
+        - title: "MJ绘画中文站"
+          url: "https://www.mxai.cn/home/#/mj"
           logo_letter: "M"
 
 - id: "docs"
