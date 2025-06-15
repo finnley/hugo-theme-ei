@@ -121,6 +121,22 @@ right_sections:
         - title: "MJ绘画中文站"
           url: "https://www.mxai.cn/home/#/mj"
           logo_letter: "M"
+    - group_title: "AI 换脸"
+      links:
+        - title: "FaceHub"
+          url: "https://www.facengine.ai/"
+          logo_letter: "F"
+        - title: "DeepFakes"
+          url: "https://deepfakesweb.com/"
+          logo_letter: "F"
+    - group_title: "AI 变音"
+      links:
+        - title: "RASK"
+          url: "https://zh.rask.ai/"
+          logo_letter: "F"
+        - title: "DeepFakes"
+          url: "https://deepfakesweb.com/"
+          logo_letter: "F"
 
 - id: "docs"
   title: "📑 文档 DOCs"
